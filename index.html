@@ -239,6 +239,112 @@ a:hover{text-decoration:underline;}
 .s8nt strong{font-weight:700;}
 .s8follow{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px 12px;}
 .s8fl{font-size:12px;color:var(--text2);line-height:1.5;}
+
+.s3grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1;min-height:0;}
+
+/* ── Mobile responsive (≤768px) ─────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Nav */
+  #nav { padding: 0 12px; gap: 8px; height: 52px; }
+  #nav-title { display: none; }
+  #slide-dots { gap: 5px; }
+  .dot { width: 7px; height: 7px; }
+  .dot.active { width: 9px; height: 9px; }
+  .nav-btn { padding: 5px 10px; font-size: 11px; }
+  #slide-counter { font-size: 11px; }
+
+  /* Slide inner padding */
+  .si { padding: 20px 18px 0; overflow-y: auto; }
+
+  /* Typography */
+  .stag { font-size: 9px; margin-bottom: 8px; letter-spacing: 0.1em; }
+  .shl { font-size: 26px !important; margin-bottom: 6px; line-height: 1.1; }
+  .sdk { font-size: 12px; line-height: 1.45; margin-bottom: 10px; }
+  .sft { font-size: 9px; padding: 7px 0 8px; flex-wrap: wrap; gap: 4px; }
+  .snum { font-size: 13px; }
+
+  /* S1 legend */
+  .s1leg { flex-wrap: wrap; gap: 10px; }
+
+  /* S2 stats — stack to single column */
+  .s2stats { grid-template-columns: 1fr; gap: 2px; margin-bottom: 10px; }
+  .s2sn { font-size: 28px; }
+  .s2sl { font-size: 11px; }
+  .s2leg { flex-wrap: wrap; gap: 10px; }
+
+  /* S4 grid — single column */
+  .s4grid { grid-template-columns: 1fr; gap: 12px; }
+  .s4nm { width: 140px; font-size: 11px; }
+  .s4n { font-size: 11px; }
+  .s4ct { font-size: 9px; }
+
+  /* S5 — simplify */
+  .s5r { grid-template-columns: 24px 1fr 40px; gap: 6px; }
+  .s5rbw { display: none; }
+  .s5rp { display: none; }
+  .s5era { grid-template-columns: 1fr; gap: 2px; }
+  .s5cavx { font-size: 11px; }
+  .s5bb { height: 36px; }
+  .s5seg { font-size: 10px; padding-left: 5px; }
+  .s5timeline { display: none; }
+
+  /* S6 — single column */
+  .s6body { grid-template-columns: 1fr; gap: 10px; overflow-y: auto; }
+  .s6sn { font-size: 28px; }
+  .s6sl { font-size: 11px; }
+  .s6ft { font-size: 9px; }
+  .s6fx { font-size: 12px; }
+  .s6qtext { font-size: 13px; }
+  .s6yx { font-size: 11px; }
+
+  /* S7 — single column, scrollable */
+  .s7grid { grid-template-columns: 1fr; gap: 8px; overflow-y: auto; }
+  .s7cx { font-size: 11px; }
+  .s7ct { font-size: 9px; }
+  .s7pr { font-size: 10px; }
+
+  /* S8 — single column */
+  .s8body { grid-template-columns: 1fr; gap: 8px; overflow-y: auto; }
+  .s8nm { font-size: 12px; }
+  .s8desc { font-size: 10.5px; }
+  .s8url { font-size: 9.5px; }
+  .s8nt { font-size: 11px; }
+  .s8fl { font-size: 11px; }
+  .s8ico { font-size: 18px; }
+
+  /* S3 grid — single column, no flex:1 so footer sits correctly */
+  .s3grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    flex: 0 0 auto !important;
+    overflow-y: auto;
+  }
+
+  /* Remove old broken attribute selector */
+  div[style*="grid-template-columns:1fr 1fr"] {
+    display: block !important;
+  }
+
+  /* Bar chart label widths */
+  .s4nm[style*="width:195px"] { width: 140px !important; }
+
+  /* Map sidebar — hide on mobile, map takes full width */
+  .mapside { display: none; }
+  .mapwrap { gap: 0; }
+
+  /* Chart canvas height reduction */
+  .ca > div { height: 280px !important; }
+}
+
+@media (max-width: 480px) {
+  .shl { font-size: 22px !important; }
+  .si { padding: 14px 14px 0; }
+  .s2sn { font-size: 24px; }
+  .s6sn { font-size: 24px; }
+}
+
 </style>
 </head>
 <body>
@@ -283,7 +389,7 @@ a:hover{text-decoration:underline;}
   <div class="shl">225 petitions. Or <span class="acc-green">510.</span></div>
   <div class="sdk">Slide 1 shows 225 petitions explicitly about cycling or pedestrian infrastructure — the narrow definition. Add the petitions about traffic calming, road safety, speed limits, shared paths, and liveability and the count reaches 510. The difference reflects two analytical choices about what counts as active transport, not two different things residents were asking for. Residents routinely describe safety, liveability, cycling, and walking in the same petition. This slide uses the broader count — and shows what it includes.</div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1;min-height:0;">
+  <div class="s3grid">
 
     <!-- Left: sub-theme breakdown -->
     <div style="display:flex;flex-direction:column;gap:0;">
